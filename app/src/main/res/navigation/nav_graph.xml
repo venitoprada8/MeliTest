@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.venanciop.melitest.presentation.product_list.ProductListFragment"
+        android:label="ProductListFragment" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.venanciop.melitest.presentation.product_detail.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+        <argument
+            android:name="price"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="0" />
+        <argument
+            android:name="image"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="image.png" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Sin titulo" />
+        <argument
+            android:name="availableQuantity"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="availableMercadoPago"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="productStatus"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Sin estado" />
+    </fragment>
+</navigation>
